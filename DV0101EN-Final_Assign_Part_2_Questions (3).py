@@ -21,22 +21,24 @@ app = dash.Dash(__name__)
 # Set the title of the dashboard
 #app.title = "Automobile Statistics Dashboard"
 
-#---------------------------------------------------------------------------------
-# Create the dropdown menu options
-dropdown_options = [
-    {'label': 'Yearly Statistics', 'value': 'Yearly Statistics'},
-    {'label': 'Recession Period Statistics', 'value': 'Recession Period Statistics'}
-]
-# List of years 
-year_list = [i for i in range(1980, 2024, 1)]
-#---------------------------------------------------------------------------------------
+
 # Create the layout of the app
 app.layout = html.Div([
     #TASK 2.1 Add title to the dashboard
     html.H1("Automobile Sales Statistics Dashboard",
     style={'textAlign': 'center', 'color': '#503D36','font-size': 24}),
     #May include style for title
-    html.Div([#TASK 2.2: Add two dropdown menus
+    
+#TASK 2.2: Add two dropdown menus   
+#Create the dropdown menu options
+    dropdown_options = [
+    {'label': 'Yearly Statistics', 'value': 'Yearly Statistics'},
+    {'label': 'Recession Period Statistics', 'value': 'Recession Period Statistics'}
+]
+# List of years 
+year_list = [i for i in range(1980, 2024, 1)]
+    
+    html.Div([
         html.Label("Select Statistics:"),
         dcc.Dropdown(
             id='dropdown-statistics',
